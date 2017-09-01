@@ -5,8 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_StackPanel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="250" Width="525">
     <Grid>
-        
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Width="200">
+                    <Button HorizontalContentAlignment="Left" Background="Red">Right</Button>
+                    <Button HorizontalContentAlignment="Center" Background="Orange">Center</Button>
+                    <Button HorizontalContentAlignment="Right" Background="Yellow">Right</Button>
+                    <Button HorizontalContentAlignment="Stretch" Background="Lime">Stratch</Button>
+                </StackPanel>
+                <StackPanel Width="150">
+                    <Button Background="Red">No scaling</Button>
+                    <Button Background="Orange">
+                        <Button.RenderTransform>
+                            <ScaleTransform ScaleX="2"/>
+                        </Button.RenderTransform>
+                        X
+                    </Button>
+                    <Button Background="Yellow">
+                        <Button.RenderTransform>
+                            <ScaleTransform ScaleX="2" ScaleY="2"/>
+                        </Button.RenderTransform>
+                        X + Y
+                    </Button>
+                    <Button Background="Lime">
+                        <Button.RenderTransform>
+                            <ScaleTransform ScaleY="2"/>
+                        </Button.RenderTransform>
+                        Y
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+            <DockPanel Height="30">
+                <Label Content="Label 1" Background="Aqua" VerticalAlignment="Stretch" VerticalContentAlignment="Center" Padding="30,0"/>
+                <Label Content="Label 2" Background="Bisque"/>
+            </DockPanel>
+        </StackPanel>
     </Grid>
 </Window>
